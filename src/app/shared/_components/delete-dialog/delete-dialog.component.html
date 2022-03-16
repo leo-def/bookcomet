@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>
+    {{data && data.title ? data.title : 'Delete item'}}
+</h1>
+<div mat-dialog-content>
+    {{data && data.content ? data.content : 'Do you really want to delete it ?'}}
+</div>
+<div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="true">
+        {{data && data.okText ? data.okText: 'Yes'}}</button>
+    <button mat-button [mat-dialog-close]="false">
+        {{data && data.noText ? data.noText: 'No'}}
+    </button>
+</div>

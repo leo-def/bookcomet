@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat
+
+@include mat.core()
+
+$light-primary: mat.define-palette(mat.$indigo-palette)
+
+$light-accent: mat.define-palette(mat.$pink-palette)
+
+$light-color: ( color: ( primary: $light-primary, accent: $light-accent ) )
+
+$light-theme: mat.define-light-theme($light-color)
+
+$dark-primary: mat.define-palette(mat.$pink-palette)
+
+$dark-accent: mat.define-palette(mat.$blue-gray-palette)
+
+$dark-color: ( color: ( primary: $dark-primary, accent: $dark-accent ) )
+
+$dark-theme: mat.define-dark-theme($dark-color)
+
+@include mat.core-theme($dark-theme)
+
+@include mat.button-theme($dark-theme)
+
+.my-light-theme
+  @include mat.core-color($light-theme)
+  @include mat.button-color($light-theme)
+
+.spacer
+  flex: 1 1 auto
+
+.paper
+  @include mat.elevation-transition()
+  @include mat.elevation(2)
+  &:active
+    @include mat.elevation(8)
+
+body
+  background-color: #e0f2f1
+
+.card_section
+  height: 150px
+  margin-top: 30px
+  padding: 30px

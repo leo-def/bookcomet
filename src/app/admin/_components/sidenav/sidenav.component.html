@@ -1,0 +1,28 @@
+<mat-sidenav-container
+    class="sidenav-container"
+    (backdropClick)="close('backdrop')"
+    >
+  <mat-sidenav
+    #sidenav
+    class="sidenav"
+    (keydown.escape)="close('escape')"
+    disableClose>
+    <span routerLink="/admin" class="mat-headline">BookComet</span>
+    <mat-list role="list">
+      <mat-divider></mat-divider>
+        <mat-list-item
+            (click)="close('nav')"
+            [routerLink]="['/admin', 'book']"
+            role="listitem">
+            Books
+        </mat-list-item>
+        <mat-divider></mat-divider>
+    </mat-list>
+    
+  </mat-sidenav>
+
+  <mat-sidenav-content 
+    class="sidenav-content">
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

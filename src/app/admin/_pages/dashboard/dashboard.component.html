@@ -1,0 +1,49 @@
+
+<section
+class="container card_section"
+fxLayout="row"
+fxLayoutGap="20px"
+fxLayoutAlign="start center" >
+
+  <mat-card >
+    <mat-card-header>
+    <div mat-card-avatar class="login-header-image"></div>
+    <mat-card-title>Books</mat-card-title>
+    <mat-card-subtitle>Books Management</mat-card-subtitle>
+    </mat-card-header>
+    <div fxLayout="row" fxLayoutAlign="space-around start">
+      <button
+        mat-raised-button
+        mat-icon-button
+        class="header-icon"
+        aria-label="Books"
+        [routerLink]="['/admin', 'book']"
+        >
+        <mat-icon>menu_book</mat-icon>
+      </button>
+
+    </div>
+  </mat-card>
+  
+
+  <mat-card >
+    <mat-card-header>
+    <div mat-card-avatar class="login-header-image"></div>
+    <mat-card-title>Exit</mat-card-title>
+    <mat-card-subtitle>System Logout</mat-card-subtitle>
+    </mat-card-header>
+    <div fxLayout="row" fxLayoutAlign="space-around start">
+      <button
+        mat-icon-button
+        mat-raised-button
+        class="header-icon"
+        aria-label="Exit"
+        [routerLink]="['/logout']">
+        <mat-icon >logout</mat-icon>
+      </button>
+
+    </div>
+  </mat-card>
+
+
+</section>

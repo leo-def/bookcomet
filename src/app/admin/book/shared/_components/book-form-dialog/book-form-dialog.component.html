@@ -1,0 +1,27 @@
+<h1 mat-dialog-title *ngIf="data && data.title">
+    {{data && data.title ? data.noText: 'Create Book'}}
+</h1>
+<div mat-dialog-content>
+  <app-book-form
+    [disabled]="disabled"
+    [book]="book"
+    (formSubmit)="onSubmit($event)">
+  </app-book-form>
+</div>
+<div mat-dialog-actions>
+  <button
+    mat-button
+    [mat-dialog-close]="null"
+    (click)="onBack()">
+    {{data && data.noText ? data.noText: 'Back'}}
+  </button>
+  <button
+    mat-button
+    mat-raised-button
+    [mat-dialog-close]="formValue"
+    type="submit"
+    form="book-form"
+    *ngIf="!disabled" >
+    {{data && data.okText ? data.okText: 'Save'}}
+  </button>
+</div>

@@ -1,0 +1,78 @@
+<section
+  class="container book_section paper"
+  fxLayout="row"
+  fxLayoutAlign="space-around center">
+  
+      <div
+        fxLayout="column"
+        fxFlex="40"
+        fxFlex.gt-md="60"
+        fxLayoutAlign="space-around center"
+        class="left-side">
+          <span class="mat-subheading-2">Try this amazing app.<br />
+          Using it you can do<br />
+          amazing this.<br />
+          Create Account.<br />
+          and be happy.<br /></span>
+      </div>
+
+      <div
+        fxLayout="column"
+        fxFlex="60"
+        fxFlex.gt-md="40"
+        class="right-side"
+        fxLayoutAlign="space-around center">
+        <span class="mat-headline">BookComet</span>
+      </div>
+
+</section>
+
+
+<section
+  class="container card_section"
+  fxLayout="row"
+  fxLayoutGap="20px"
+  fxLayoutAlign="start center" >
+  
+    <mat-card >
+      <mat-card-header>
+      <div mat-card-avatar class="login-header-image"></div>
+      <mat-card-title>Login</mat-card-title>
+      <mat-card-subtitle>System Authentication</mat-card-subtitle>
+      </mat-card-header>
+      <div fxLayout="row" fxLayoutAlign="space-around start">
+        <button
+          mat-icon-button
+          mat-raised-button
+          class="header-icon"
+          aria-label="Login"
+          routerLink="/login">
+          <mat-icon >login</mat-icon>
+        </button>
+
+      </div>
+    </mat-card>
+
+    
+    <mat-card >
+      <mat-card-header>
+      <div mat-card-avatar class="login-header-image"></div>
+      <mat-card-title>Cadastre</mat-card-title>
+      <mat-card-subtitle>Create a Account now</mat-card-subtitle>
+      </mat-card-header>
+      <div fxLayout="row" fxLayoutAlign="space-around start">
+        <button
+          mat-raised-button
+          mat-icon-button
+          class="header-icon"
+          aria-label="Cadastre"
+          routerLink="/cadastre"
+          >
+          <mat-icon>account_circle</mat-icon>
+        </button>
+
+      </div>
+    </mat-card>
+    
+</section>
+

@@ -1,0 +1,31 @@
+<form *ngIf="form" [formGroup]="form" class="container" id="book--form">
+  <!--  name: string; -->
+  <div fxLayout="row" fxLayoutAlign="space-around start">
+
+    <div fxLayout="column" fxFlex="100">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input
+          matInput
+          placeholder="Name" 
+          formControlName="name">
+      </mat-form-field>
+
+    </div>
+
+  </div>
+
+  <div fxLayout= "row" fxLayoutAlign="end center">
+
+    <div fxLayout="column" fxFlexAlign.gt-xs="50" fxFlex.xs="10">
+      <!-- Create  -->
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="reset()">
+        Reset
+      </button>
+    </div>
+  </div>
+
+</form>

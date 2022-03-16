@@ -1,0 +1,90 @@
+<form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()" class="container" id="book-form">
+    <!-- row -->
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <!-- col -->
+      <div fxLayout="column">
+        <!-- id: number; disabled -->
+          <mat-form-field class="form-field" appearance="fill">
+            <mat-label>Id</mat-label>
+            <input
+              matInput
+              placeholder="Id"
+              type="number"
+              formControlName="id">
+          </mat-form-field>
+      </div>
+    </div>
+
+    <!-- row -->
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <!-- col -->
+      <div fxLayout="column">
+        <!-- name: string; -->
+    
+          <mat-form-field class="form-field" appearance="fill">
+            <mat-label>Name</mat-label>
+            <input
+              matInput
+              placeholder="Name"
+              type="text"
+              formControlName="name">
+          </mat-form-field>
+      </div>
+      <!-- col -->
+      <div fxLayout="column">
+        <!-- year: number; -->
+          <mat-form-field class="form-field" appearance="fill">
+            <mat-label>Year</mat-label>
+            <input
+              matInput
+              placeholder="Year"
+              type="number"
+              formControlName="year">
+          </mat-form-field>
+      </div>
+    </div>
+
+    <!-- row -->
+    <div fxLayout="row" fxLayoutAlign="space-around center">
+      <!-- col -->
+      <div fxLayout="column" fxFlex="100">
+      <!-- authors: Array<string>; -->
+        <mat-form-field class="authors-chip-list" appearance="fill">
+          <mat-label>Authors</mat-label>
+          <mat-chip-list #chipList aria-label="Authors selection">
+            <mat-chip 
+              *ngFor="let author of authors"
+              (removed)="remove(author)"
+              [disabled]="disabled">
+              {{author}}
+              <button matChipRemove>
+                <mat-icon>cancel</mat-icon>
+              </button>
+            </mat-chip>
+            <input placeholder="New author..."
+                   [matChipInputFor]="chipList"
+                   [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                   [matChipInputAddOnBlur]="addOnBlur"
+                   (matChipInputTokenEnd)="add($event)"
+                   [disabled]="disabled">
+          </mat-chip-list>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <!-- row -->
+    <div  fxLayout="row" fxLayoutAlign="space-around center">
+      <!-- col -->
+      <div fxLayout="column" fxFlex="100">
+        <!-- summary: string; textarea -->
+          <mat-form-field class="form-field" appearance="fill">
+            <mat-label>Summary</mat-label>
+            <textarea 
+              matInput
+              placeholder="Summary"
+              formControlName="summary">
+            </textarea>
+          </mat-form-field>
+      </div>
+    </div>
+</form>

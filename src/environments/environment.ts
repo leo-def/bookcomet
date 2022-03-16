@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  api: {
+    url: {
+      host: 'https://publishing-house-service.herokuapp.com/api/v1/',
+      books: 'https://publishing-house-service.herokuapp.com/api/v1/books/',
+    },
+    useMocks: true
+  }
 };
 
 /*
